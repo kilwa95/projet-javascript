@@ -1,5 +1,5 @@
-import { ReactDOM, React } from './React';
-import App from './App';
+import { ReactDOM, React } from './React.js';
+import App from './App.js';
 
 //const helloWorld = new HelloWorld();
 

@@ -1,5 +1,5 @@
-import Component from './Component';
-import { React } from './React';
+import Component from './Component.js';
+import { React } from './React.js';
 
 class Menu extends Component {
 	affichier() {

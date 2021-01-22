@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 class Component {
 	constructor(props) {
 		this.props = props;
@@ -25,8 +23,9 @@ class Component {
 	}
 
 	shouldUpdate() {
-		const equalProps = _.isEqual(this.prevProps, this.props);
-		return !equalProps;
+		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
+		const equalState = JSON.stringify(this.prevState) === JSON.stringify(this.state);
+		return !equalProps || !equalState;
 	}
 
 	render() {

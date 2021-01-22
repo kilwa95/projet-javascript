@@ -1,6 +1,6 @@
-import Component from './Component';
-import { React } from './React';
-import Menu from './Menu';
+import Component from './Component.js';
+import { React } from './React.js';
+import Menu from './Menu.js';
 
 class App extends Component {
 	constructor(props) {

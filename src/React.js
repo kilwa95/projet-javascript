@@ -1,4 +1,4 @@
-import { getValue } from './String';
+import { getValue } from './String.js';
 
 String.prototype.interpolate = function(props) {
 	let template = this;
