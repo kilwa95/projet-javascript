@@ -1,4 +1,4 @@
-export function getValue(obj, keys) {
+function getValue(obj, keys) {
 	let value = obj;
 	for (keys of keys) {
 		value = value[keys];
@@ -7,7 +7,7 @@ export function getValue(obj, keys) {
 }
 // prtops-accesse
 
-String.prototype.interpolater = function(props) {
+export function interpolater(props) {
 	let template = this;
 	while (template.indexOf('{{') > 0) {
 		const start = template.indexOf('{{');
@@ -18,6 +18,5 @@ String.prototype.interpolater = function(props) {
 		const value = getValue(props, keys);
 		template = template.replace(toReplace, value);
 	}
-	console.log('interpolate', { props, template });
 	return template;
-};
+}
