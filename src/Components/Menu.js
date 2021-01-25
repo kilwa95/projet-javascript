@@ -2,6 +2,10 @@ import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 
 class Menu extends Component {
+	pushRoute(name, url) {
+		history.pushState({ id: '5' }, name, url);
+		console.log(window.history.state);
+	}
 	render() {
 		return React.createElement(
 			this,
@@ -14,7 +18,7 @@ class Menu extends Component {
 				React.createElement(
 					this,
 					'a',
-					{ class: 'navbar-brand', href: '/sport' },
+					{ class: 'navbar-brand', onClick: () => this.pushRoute('sport', '/sport') },
 					React.createElement(this, 'span', { class: 'navbar-brand mb-0 h1 text-white' }, 'HomePage')
 				)
 			)

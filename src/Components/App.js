@@ -5,6 +5,7 @@ import Home from './Home.js';
 class App extends Component {
 	render() {
 		const path = window.location.pathname;
+		console.log('deubber', { pathname: window.location, history });
 
 		switch (path) {
 			case '/':
@@ -20,5 +21,4 @@ class App extends Component {
 		}
 	}
 }
-
 export default App;
