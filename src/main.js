@@ -1,6 +1,5 @@
 import { ReactDOM, React } from './React/React.js';
 import App from './Components/App.js';
-const log = console.log;
 
 let event = new Event('updateReactDom');
 let root = document.getElementById('root');

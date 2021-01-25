@@ -4,7 +4,6 @@ import { interpolater } from '../String.js';
 String.prototype.interpolate = interpolater;
 
 const history = {};
-const log = console.log;
 
 export const ReactDOM = {
 	render(rElement, hElement) {
