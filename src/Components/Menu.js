@@ -10,12 +10,12 @@ class Menu extends Component {
 		return React.createElement(
 			this,
 			'nav',
-			{ class: 'navbar navbar-expand-lg navbar-light bg-light mb-5' },
+			{ class: 'navbar navbar-expand-lg navbar-light bg-danger mb-5' },
 			React.createElement(
 				this,
 				'div',
 				{ class: 'container-fluid' },
-				React.createElement(this, 'a', { class: 'navbar-brand' }, 'Navbar'),
+				React.createElement(this, 'a', { class: 'navbar-brand text-white' }, 'Amazone'),
 				React.createElement(
 					this,
 					'button',
@@ -30,9 +30,9 @@ class Menu extends Component {
 						this,
 						'div',
 						{ class: 'navbar-nav' },
-						React.createElement(this, 'a', { class: 'nav-link active' }, 'Homme'),
-						React.createElement(this, 'a', { class: 'nav-link ' }, 'Features'),
-						React.createElement(this, 'a', { class: 'nav-link ' }, 'Pricing')
+						React.createElement(this, 'a', { class: 'nav-link active text-white' }, 'Homme'),
+						React.createElement(this, 'a', { class: 'nav-link text-white' }, 'Features'),
+						React.createElement(this, 'a', { class: 'nav-link  text-white' }, 'Pricing')
 					)
 				)
 			)
