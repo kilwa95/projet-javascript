@@ -50,6 +50,8 @@ class Component {
 		return true;
 	}
 
+	componentWillMount() {}
+
 	render() {
 		return;
 	}
