@@ -43,7 +43,7 @@ function createOrGetComponent(id, tag) {
 		if (history[id] === undefined) history[id] = {};
 		if (history[id][tag.name] === undefined) history[id][tag.name] = [];
 		let reactElement = new tag();
-		reactElement.componentWillMount();
+		reactElement.willComponentMount();
 		history[id][tag.name] = reactElement;
 		return reactElement;
 	}

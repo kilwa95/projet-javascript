@@ -1,5 +1,9 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
+import Electro from './ElectroArticle.js';
+import Article from './Article.js';
+
+
 
 class Menu extends Component {
 	constructor(props) {
@@ -7,7 +11,7 @@ class Menu extends Component {
 		this.state = { routes: '' };
 	}
 	pushRoute(name, url) {
-		history.pushState(null, name, url);
+		history.pushState({ products: this.props.products}, name, url);
 		this.setState({ routes: url });
 		console.log(window.history.state);
 	}
@@ -40,7 +44,7 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link active text-white',
-								onClick: () => this.pushRoute('Produits', '/'),
+								onClick: () => this.pushRoute( 'Produits', '/' ),
 								role: 'button'
 							},
 							'Produits'
@@ -50,10 +54,10 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link text-white',
-								onClick: () => this.pushRoute('Sports', '/sport'),
+								onClick: () => this.pushRoute('Electro', 'electro'),
 								role: 'button'
 							},
-							'Sports'
+							'Electronique'
 						),
 						React.createElement(
 							this,
