@@ -16,8 +16,8 @@ class Home extends Component {
 	async willComponentMount() {
 		const responsse = await fetch('https://fakestoreapi.com/products');
 		const resultat = await responsse.json();
-		window.localStorage.setItem('prod', JSON.stringify(resultat));
-		this.getFromLocalStorage('prod')
+		window.localStorage.setItem('products', JSON.stringify(resultat));
+		this.getFromLocalStorage('products')
 	}
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
@@ -30,13 +30,14 @@ class Home extends Component {
 			this,
 			'div',
 			null,
-			React.createElement(this, Menu, null, null),
+			React.createElement(this, Menu,{ products: this.state.products, isfetching: this.state.isfetching }, null),
 			React.createElement(
 				this,
 				Article,
-				{ products: this.state.products, isfetching: this.state.isfetching },
+				null,
 				null
 			),
+			
 		
 		);
 		

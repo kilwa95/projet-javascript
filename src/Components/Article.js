@@ -4,8 +4,8 @@ import Loading from '../Components/Loading.js';
 
 class Article extends Component {
 	render() {
-		if (this.props.isfetching) {
-			const products = this.props.products;
+		if (history.state) {
+			const products = history.state['products'];
 			let templete = products.map((product) => {
 				return React.createElement(
 					this,

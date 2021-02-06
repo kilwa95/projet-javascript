@@ -11,8 +11,9 @@ class Menu extends Component {
 		this.state = { routes: '' };
 	}
 	pushRoute(name, url) {
-		history.pushState(null, name, url);
+		history.pushState({ products: this.props.products}, name, url);
 		this.setState({ routes: url });
+	
 		console.log(window.history.state);
 	}
 	render() {
@@ -44,7 +45,7 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link active text-white',
-								onClick: () => this.pushRoute('Produits', '/'),
+								onClick: () => this.pushRoute( 'Produits', '/' ),
 								role: 'button'
 							},
 							'Produits'
