@@ -8,15 +8,13 @@ import Loading from './Loading.js';
 
 class Electro extends Component {
 	render() {
-			const products =history.state['products'];
+		const products = history.state['products'];
 		let templete = products.map((product) => {
 			if (product['category'] === 'electronics') {
 				return React.createElement(
-					
 					this,
 					'ul',
-				{ class: 'list-unstyled card card-body ' },
-					
+				{ class: 'list-unstyled card card-body '},
 					React.createElement(
 						this,
 						'li',

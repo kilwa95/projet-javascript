@@ -1,7 +1,8 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 import Home from './Home.js';
-import Electro from './Electro.js';
+import ElectroArticle from './ElectroArticle.js';
+
 
 
 class App extends Component {
@@ -13,7 +14,7 @@ class App extends Component {
 			case '/':
 				return React.createElement(this, Home, null, null);
 			case '/electro':
-				return React.createElement(this, Electro, null, null);
+				return React.createElement(this, ElectroArticle, null, null);
 			case '/jeux':
 				return React.createElement(this, Home, null, null);
 			case '/meteo':

@@ -13,7 +13,6 @@ class Menu extends Component {
 	pushRoute(name, url) {
 		history.pushState({ products: this.props.products}, name, url);
 		this.setState({ routes: url });
-	
 		console.log(window.history.state);
 	}
 	render() {
