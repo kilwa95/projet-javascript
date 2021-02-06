@@ -2,8 +2,13 @@ import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 
 class Menu extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { routes: '' };
+	}
 	pushRoute(name, url) {
 		history.pushState(null, name, url);
+		this.setState({ routes: url });
 		console.log(window.history.state);
 	}
 	render() {
