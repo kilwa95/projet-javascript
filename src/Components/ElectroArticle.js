@@ -1,16 +1,20 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
-import Loading from '../Components/Loading.js';
+import Menu from './Menu.js';
+import Loading from './Loading.js';
 
-class Article extends Component {
+
+// import Loading from '../Components/Loading.js';
+
+class ElectroArticle extends Component {
 	render() {
-		if (history.state) {
-			const products = history.state['products'];
-			let templete = products.map((product) => {
+		const products = history.state['products'];
+		let templete = products.map((product) => {
+			if (product['category'] === 'electronics') {
 				return React.createElement(
 					this,
 					'ul',
-					{ class: 'list-unstyled card card-body ' },
+				{ class: 'list-unstyled card card-body '},
 					React.createElement(
 						this,
 						'li',
@@ -31,13 +35,15 @@ class Article extends Component {
 						)
 					)
 				);
+				
+			}
+			
+
 			});
 
 			return React.createElement(this, 'div', { class: 'container' }, ...templete);
-		} else {
-			return React.createElement(this, Loading, null, null);
-		}
+	
 	}
+	
 }
-
-export default Article;
+export default ElectroArticle;

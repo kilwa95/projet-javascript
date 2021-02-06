@@ -11,6 +11,7 @@ class Component {
 		var event = new Event('updateReactDom');
 		let root = document.getElementById('root');
 		root.dispatchEvent(event, this.id);
+		
 		console.log(this.id);
 	}
 	getRandomInt(max) {
@@ -21,7 +22,9 @@ class Component {
 		console.log(this.id, {
 			state: JSON.stringify(this.state),
 			props: JSON.stringify(this.props)
+		
 		});
+		
 	}
 	setState(newState) {
 		this.prevState = this.state;
@@ -43,14 +46,12 @@ class Component {
 		}
 		return this.prevRender;
 	}
-
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
 		const equalState = JSON.stringify(this.prevState) === JSON.stringify(this.state);
 		return true;
 	}
-
-	componentWillMount() {}
+	willComponentMount() { }
 
 	render() {
 		return;
