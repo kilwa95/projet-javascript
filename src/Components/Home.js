@@ -2,29 +2,23 @@ import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 import Menu from './Menu.js';
 import Article from './Article.js';
+import Electro from './Electro.js';
 
 class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { products: [], isfetching: false };
 	}
-	async addToLocalStorage() {
-		const responsse = await fetch('https://fakestoreapi.com/products');
-		const resultat = await responsse.json();
-		window.localStorage.setItem('prod',JSON.stringify(resultat));
-	}
-
-	async getFromLocalStorage() {
-		let products = JSON.parse(window.localStorage.getItem('prod'))
+	async getFromLocalStorage(key) {
+		let products = JSON.parse(window.localStorage.getItem(key))
 		this.setState({ products:  products, isfetching: true });
 	}
-
-	// async componentWillMount() {
-	// 	const responsse = await fetch('https://fakestoreapi.com/products');
-	// 	const resultat = await responsse.json();
-	// 	this.setState({ products: resultat, isfetching: true });
-	// }
-
+	async willComponentMount() {
+		const responsse = await fetch('https://fakestoreapi.com/products');
+		const resultat = await responsse.json();
+		window.localStorage.setItem('prod', JSON.stringify(resultat));
+		this.getFromLocalStorage('prod')
+	}
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
 		const equalState = JSON.stringify(this.prevState) === JSON.stringify(this.state);
@@ -42,8 +36,10 @@ class Home extends Component {
 				Article,
 				{ products: this.state.products, isfetching: this.state.isfetching },
 				null
-			)
+			),
+		
 		);
+		
 	}
 }
 

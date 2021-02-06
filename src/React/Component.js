@@ -46,14 +46,12 @@ class Component {
 		}
 		return this.prevRender;
 	}
-
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
 		const equalState = JSON.stringify(this.prevState) === JSON.stringify(this.state);
 		return true;
 	}
-	addToLocalStorage() { }
-	getFromLocalStorage(){}
+	willComponentMount() { }
 
 	render() {
 		return;

@@ -1,5 +1,9 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
+import Electro from './Electro.js';
+import Article from './Article.js';
+
+
 
 class Menu extends Component {
 	constructor(props) {
@@ -40,7 +44,7 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link active text-white',
-								onClick: () => { this.pushRoute('Produits', '/'),getFromLocalStorage() },
+								onClick: () => this.pushRoute('Produits', '/'),
 								role: 'button'
 							},
 							'Produits'
@@ -50,10 +54,10 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link text-white',
-								onClick: () => this.pushRoute('Sports', '/sport'),
+								onClick: () => this.pushRoute('Electro', 'electro'),
 								role: 'button'
 							},
-							'Sports'
+							'Electronique'
 						),
 						React.createElement(
 							this,
