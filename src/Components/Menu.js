@@ -35,7 +35,7 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link active text-white',
-								onClick: () => this.pushRoute('Produits', '/'),
+								onClick: () => { this.pushRoute('Produits', '/'),getFromLocalStorage() },
 								role: 'button'
 							},
 							'Produits'

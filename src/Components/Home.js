@@ -8,11 +8,22 @@ class Home extends Component {
 		super(props);
 		this.state = { products: [], isfetching: false };
 	}
-	async componentWillMount() {
+	async addToLocalStorage() {
 		const responsse = await fetch('https://fakestoreapi.com/products');
 		const resultat = await responsse.json();
-		this.setState({ products: resultat, isfetching: true });
+		window.localStorage.setItem('prod',JSON.stringify(resultat));
 	}
+
+	async getFromLocalStorage() {
+		let products = JSON.parse(window.localStorage.getItem('prod'))
+		this.setState({ products:  products, isfetching: true });
+	}
+
+	// async componentWillMount() {
+	// 	const responsse = await fetch('https://fakestoreapi.com/products');
+	// 	const resultat = await responsse.json();
+	// 	this.setState({ products: resultat, isfetching: true });
+	// }
 
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
