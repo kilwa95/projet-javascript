@@ -2,7 +2,7 @@ import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 import Menu from './Menu.js';
 import Article from './Article.js';
-import Electro from './Electro.js';
+import Electro from './ElectroArticle.js';
 
 class Home extends Component {
 	constructor(props) {

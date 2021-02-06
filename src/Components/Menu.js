@@ -1,6 +1,6 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
-import Electro from './Electro.js';
+import Electro from './ElectroArticle.js';
 import Article from './Article.js';
 
 
