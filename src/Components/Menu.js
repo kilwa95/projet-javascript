@@ -3,7 +3,7 @@ import { React } from '../React/React.js';
 
 class Menu extends Component {
 	pushRoute(name, url) {
-		history.pushState({ id: '5' }, name, url);
+		history.pushState(null, name, url);
 		console.log(window.history.state);
 	}
 	render() {
@@ -30,9 +30,36 @@ class Menu extends Component {
 						this,
 						'div',
 						{ class: 'navbar-nav' },
-						React.createElement(this, 'a', { class: 'nav-link active text-white' }, 'Homme'),
-						React.createElement(this, 'a', { class: 'nav-link text-white' }, 'Features'),
-						React.createElement(this, 'a', { class: 'nav-link  text-white' }, 'Pricing')
+						React.createElement(
+							this,
+							'a',
+							{
+								class: 'nav-link active text-white',
+								onClick: () => this.pushRoute('Produits', '/'),
+								role: 'button'
+							},
+							'Produits'
+						),
+						React.createElement(
+							this,
+							'a',
+							{
+								class: 'nav-link text-white',
+								onClick: () => this.pushRoute('Sports', '/sport'),
+								role: 'button'
+							},
+							'Sports'
+						),
+						React.createElement(
+							this,
+							'a',
+							{
+								class: 'nav-link  text-white',
+								onClick: () => this.pushRoute('Sports', '/jeux'),
+								role: 'button'
+							},
+							'jeux'
+						)
 					)
 				)
 			)
