@@ -64,10 +64,10 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link  text-white',
-								onClick: () => this.pushRoute('Sports', '/jeux'),
+								onClick: () => this.pushRoute('Comments', '/comments'),
 								role: 'button'
 							},
-							'jeux'
+							'Comments'
 						)
 					)
 				)

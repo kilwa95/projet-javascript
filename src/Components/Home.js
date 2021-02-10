@@ -7,17 +7,26 @@ import Electro from './ElectroArticle.js';
 class Home extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { products: [], isfetching: false };
+		this.state = { products: [], comments: [], isfetching: false };
 	}
 	async getFromLocalStorage(key) {
 		let products = JSON.parse(window.localStorage.getItem(key));
-		this.setState({ products: products, isfetching: true });
+		let comments = JSON.parse(window.localStorage.getItem(key));
+
+		this.setState({ products: products, comments: comments, isfetching: true });
 	}
 	async willComponentMount() {
 		const responsse = await fetch('https://fakestoreapi.com/products');
 		const resultat = await responsse.json();
 		window.localStorage.setItem('products', JSON.stringify(resultat));
 		this.getFromLocalStorage('products');
+
+		/*
+		const rep = await fetch('https://jsonplaceholder.typicode.com/comments');
+		const res = await rep.json();
+		window.localStorage.setItem('comments', JSON.stringify(res));
+		this.getFromLocalStorage('comments');
+		*/
 	}
 	shouldUpdate() {
 		const equalProps = JSON.stringify(this.prevProps) === JSON.stringify(this.props);
