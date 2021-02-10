@@ -11,8 +11,10 @@ class Home extends Component {
 		this.state = { products: [], comments: [], isfetching: false };
 	}
 	async getFromLocalStorage(key) {
-		let products = JSON.parse(window.localStorage.getItem(key));
-		let comments = JSON.parse(window.localStorage.getItem(key));
+		//let products = JSON.parse(window.localStorage.getItem(key));
+		//let comments = JSON.parse(window.localStorage.getItem(key));
+		let products = JSON.parse(window.localStorage.getItem('products'));
+		let comments = JSON.parse(window.localStorage.getItem('comments'));
 
 		this.setState({ products: products, comments: comments, isfetching: true });
 	}
@@ -67,10 +69,11 @@ class Home extends Component {
 			React.createElement(
 				this,
 				Article,
+				{ products: this.state.products, isfetching: this.state.isfetching },
 				CommentArticle,
-				{ products: this.state.products, comments: this.state.comments, isfetching: this.state.isfetching },
+				//{ products: this.state.products, comments: this.state.comments, isfetching: this.state.isfetching },
 				//{ products: this.state.products, isfetching: this.state.isfetching },
-				//{ comments: this.state.comments, isfetching: this.state.isfetching },
+				{ comments: this.state.comments, isfetching: this.state.isfetching },
 				null
 			)
 		);
