@@ -13,25 +13,19 @@ class CommentArticle extends Component {
 					this,
 					'li',
 					{ class: 'media' },
-					React.createElement(this, 'img', {
-						src: ` ${product.image}`,
-						height: '100',
-						width: '100',
-						class: 'mb-1'
-					}),
 					React.createElement(
 						this,
 						'div',
 						{ class: 'media-body' },
-						React.createElement(this, 'h5', { class: 'mt-0 mb-1' }, ` ${comment.title}`),
-						React.createElement(this, 'h6', { class: 'mt-0 mb-1' }, ` ${comment.category}`),
-						React.createElement(this, 'p', null, ` ${comment.price + '€'}`)
+						React.createElement(this, 'h5', { class: 'mt-0 mb-1' }, ` ${comment.name}`),
+						React.createElement(this, 'h6', { class: 'mt-0 mb-1' }, ` ${comment.email}`),
+						React.createElement(this, 'p', null, ` ${comment.body}`)
 					)
 				)
 			);
 		});
 
-			return React.createElement(this, 'div', { class: 'container' }, ...templete);
+		return React.createElement(this, 'div', { class: 'container' }, ...templete);
 	
 	}
 	

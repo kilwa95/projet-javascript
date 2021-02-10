@@ -6,7 +6,7 @@ import CommentArticle from './CommentArticle.js';
 class Comment extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { jeux: history.state['comments'], isfetching: false };
+		this.state = { comments: history.state['comments'], isfetching: false };
 	}
 
 	render() {

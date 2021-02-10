@@ -11,7 +11,7 @@ class Menu extends Component {
 		this.state = { routes: '' };
 	}
 	pushRoute(name, url) {
-		history.pushState({ products: this.props.products}, name, url);
+		history.pushState({ products: this.props.products, comments: this.props.comments}, name, url);
 		this.setState({ routes: url });
 		console.log(window.history.state);
 	}
@@ -24,7 +24,7 @@ class Menu extends Component {
 				this,
 				'div',
 				{ class: 'container-fluid' },
-				React.createElement(this, 'a', { class: 'navbar-brand text-white' }, 'Amazone'),
+				React.createElement(this, 'a', { class: 'navbar-brand text-white' }, 'Amazon'),
 				React.createElement(
 					this,
 					'button',
@@ -64,7 +64,7 @@ class Menu extends Component {
 							'a',
 							{
 								class: 'nav-link  text-white',
-								onClick: () => this.pushRoute('Comments', '/comments'),
+								onClick: () => this.pushRoute('Comments', 'comments'),
 								role: 'button'
 							},
 							'Comments'
