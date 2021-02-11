@@ -1,9 +1,9 @@
 import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 import Menu from './Menu.js';
-import ElectroArticle from './ElectroArticle.js';
+import CommentArticle from './CommentArticle.js';
 
-class Electro extends Component {
+class Comment extends Component {
 	constructor(props) {
 		super(props);
 		this.state = { products: history.state['products'], comments: history.state['comments'], isfetching: false };
@@ -17,7 +17,7 @@ class Electro extends Component {
 			React.createElement(this, Menu, this.state, null),
 			React.createElement(
 				this,
-				ElectroArticle,
+				CommentArticle,
 				null,
 				null
 			),
@@ -27,4 +27,4 @@ class Electro extends Component {
 	}
 }
 
-export default Electro;
+export default Comment;
