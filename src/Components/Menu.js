@@ -2,7 +2,7 @@ import Component from '../React/Component.js';
 import { React } from '../React/React.js';
 import Electro from './ElectroArticle.js';
 import Article from './Article.js';
-
+import Cars from './Cars.js';
 
 
 class Menu extends Component {
@@ -11,7 +11,7 @@ class Menu extends Component {
 		this.state = { routes: '' };
 	}
 	pushRoute(name, url) {
-		history.pushState({ products: this.props.products, comments: this.props.comments}, name, url);
+		history.pushState({ products: this.props.products, cars: this.props.cars, comments: this.props.comments}, name, url);
 		this.setState({ routes: url });
 		console.log(window.history.state);
 	}
@@ -58,6 +58,17 @@ class Menu extends Component {
 								role: 'button'
 							},
 							'Electronique'
+						),
+						
+						React.createElement(
+							this,
+							'a',
+							{
+								class: 'nav-link text-white',
+								onClick: () => this.pushRoute('Cars', 'cars'),
+								role: 'button'
+							},
+							'Cars'
 						),
 						React.createElement(
 							this,
