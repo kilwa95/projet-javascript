@@ -6,7 +6,7 @@ import ElectroArticle from './ElectroArticle.js';
 class Electro extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { products: history.state['products'], isfetching: false };
+		this.state = { products: history.state['products'], comments: history.state['comments'], isfetching: false };
 	}
 
 	render() {
